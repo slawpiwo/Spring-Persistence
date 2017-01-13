@@ -1,5 +1,7 @@
 package com.xcafe.bank.config;
 
+import com.xcafe.bank.service.repository.AccountRepository;
+import com.xcafe.bank.service.repository.MySqlAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,5 +30,10 @@ public class Persistence {
         dataSource.setPassword(env.getProperty("jdbc.password"));
         dataSource.setDriverClassName(env.getProperty("jdbc.driverClass"));
         return dataSource;
+    }
+
+    @Bean
+    public AccountRepository accountRepository(DataSource dataSource) {
+        return new MySqlAccountRepository(dataSource);
     }
 }

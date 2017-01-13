@@ -17,5 +17,11 @@ public class App {
 
         System.out.println("account 1: " + account1);
         System.out.println("account 2: " + account2);
+
+        bank.makeDeposit(100L, account1.getNumber());
+        bank.makeDeposit(250L, account2.getNumber());
+
+        System.out.println("account 1: " + bank.getAccountDetails(account1.getNumber()));
+        System.out.println("account 2: " + bank.getAccountDetails(account2.getNumber()));
     }
 }

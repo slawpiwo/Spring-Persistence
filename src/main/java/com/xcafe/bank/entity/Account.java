@@ -13,12 +13,12 @@ public class Account {
         this.number = number;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNumber() {
@@ -29,6 +29,9 @@ public class Account {
         return balance;
     }
 
+    public void setBalance(long balance) {
+        this.balance = balance;
+    }
 
     @Override
     public String toString() {
